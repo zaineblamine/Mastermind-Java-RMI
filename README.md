@@ -2,11 +2,12 @@
 ###version du jdk utilisé 1.8.0_65
 
 ##compilation du projet
+```
 cd Mastermind/client
 javac ICallback.java
 javac Callback.java
 rmic -v1.1 Callback
-'''
+
 cd ../server
 cp ../client/ICallback.class .
 cp ../client/Callback_stub.class .
@@ -19,7 +20,7 @@ rmic -v1.1 GameImp
 rmic -v1.1 FabGameImp
 javac *.java
 java -Djava
-'''
+
 cd ../client
 cp ../server/Game.class
 cp ../server/GameImp_Stub.class .
@@ -29,6 +30,7 @@ javac *.java
 
 
 cd ../www
+```
 on Déplace manuellement ou en utilisant la commande « mv » tous les fichiers du
 dossier « server » au dossier «www » sauf les fichiers suivants :
 - DynamicGameServer.java, DynamicGameServer.class, Server.policy
@@ -38,9 +40,10 @@ dossier « client » au dossier «www » sauf les fichiers suivants :
 - DynamicGameClient.java, DynamicGameClient.class, Client.policy
 
 ##execution du projet
+```
 cd ../server
 java -Djava.security.policy=server.policy -Djava.rmi.server.codebase=file:///home/zaineb/Desktop/Mastermind/www/ DynamicGameServer
-
 cd ../client
 java -Djava.security.policy=client.policy -Djava.rmi.server.codebase=file:///home/zaineb/Desktop/Mastermind/www/ DynamicGameClient
 
+```
