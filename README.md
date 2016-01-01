@@ -6,7 +6,7 @@ cd Mastermind/client
 javac ICallback.java
 javac Callback.java
 rmic -v1.1 Callback
-
+'''
 cd ../server
 cp ../client/ICallback.class .
 cp ../client/Callback_stub.class .
@@ -19,7 +19,7 @@ rmic -v1.1 GameImp
 rmic -v1.1 FabGameImp
 javac *.java
 java -Djava
-
+'''
 cd ../client
 cp ../server/Game.class
 cp ../server/GameImp_Stub.class .
