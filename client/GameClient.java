@@ -17,7 +17,7 @@ public class GameClient  /*extends Thread*/  {
 		FabGame fab = (FabGame) reg.lookup("Fabrique");
                 Game gm ;
                 gm=(Game) fab.newGame();
-                System.out.println("Bienvenue..");
+                System.out.println("Bienvenue...\nLes Couleurs utilisés dans ce jeu sont: R->Rouge; J->jaune; V->vert; B->bleu; O->orange; BL->blanc; VI-> violet; F-> fuchsia)\nMerci de respecté ces Symboles, les couleurs sont séparés par des espaces\nÀ chaque partie vous avez le droit de 10 propositions au maximum\n");
                 GameClient c1=new GameClient();
                 boolean bool=c1.jouerPartie(gm,cb);
                boolean continuer=true;
@@ -38,7 +38,7 @@ public class GameClient  /*extends Thread*/  {
                         }
                         else {
                             continuer=false;
-                            System.out.println("Merci! bonne journée (Tapez CTRL c pour quitter)");
+                            System.out.println("Merci! bonne journée! (Tapez CTRL c pour quitter)");
                         }                    
                     }                    
                 }             
@@ -55,7 +55,8 @@ public class GameClient  /*extends Thread*/  {
                 boolean erreur=false;
                 while(coup<10 && found==false && erreur==false){
                   coup++;
-                  System.out.println("Donnez une combinaison de couleur ( R-> Rouge , J -> jaune ; V -> vert ; B -> bleu ; O-> orange ; BL -> blanc ; VI -> violet ; F -> fuchsia}");
+				  System.out.println("\nPartie num"+coup+" :");
+                  System.out.println("Donnez une combinaison de 4 couleurs");
                   Scanner sc=new Scanner(System.in);
                   String comb=sc.nextLine();
                   if(gm.erreurDeSaisie(comb,cb)){//message de la part du serveur va etre affiché
